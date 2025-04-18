@@ -43,8 +43,6 @@ const withAuth = <P extends object>(
       return () => window.removeEventListener('cookie-change', handleCookieChange);
     }, [checkAuth]);
 
-    console.log("isChecking", isChecking);
-
     if (isChecking) {
       return <Skeleton className='max-w-[520px] h-[70vh] rounded-xl w-full' />; 
     }

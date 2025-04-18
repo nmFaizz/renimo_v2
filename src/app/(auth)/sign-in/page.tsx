@@ -22,7 +22,7 @@ import { setToken } from "@/lib/cookie";
 import { SignInResponse } from "@/types/auth";
 import { useUserStore } from "@/stores/useUserStore";
 import { UserResponse } from "@/types/user";
-import { ApiErrorResponse } from "@/types/api";
+import { ApiErrorResponse } from "@/types/api";;
 
 type SignInFormValues = {
     username: string;
@@ -43,7 +43,7 @@ export default function SignInPage() {
 
     const router = useRouter()
 
-    const { mutate: setUserData } = useMutation<UserResponse, unknown>({
+    const { mutate: setUserData } = useMutation<UserResponse, ApiErrorResponse>({
         mutationFn: async () => {
             const res = await api.get("/api/user/me")
             return res.data
@@ -51,8 +51,9 @@ export default function SignInPage() {
         onSuccess: (res) => {
             setUser(res.data)
         },
-        onError: (error) => {
-            console.error("Failed to fetch user data", error);
+        onError: (res) => {
+            const message = res.response.data.error
+            toast.error(message);
         }
     })
 
@@ -68,8 +69,9 @@ export default function SignInPage() {
             toast.success("Login successful")
             router.push("/");
         },
-        onError: (error) => {
-            toast.error(error.message)
+        onError: (res) => {
+            const message = res.response.data.error
+            toast.error(message);
         }
     })
 

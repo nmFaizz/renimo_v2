@@ -19,7 +19,7 @@ import { Form } from "@/components/ui/form";
 import { Button } from "@/components/ui/buttons/Button";
 import api from "@/lib/api";
 import { CheckUsernameResponse, SignUpResponse } from "@/types/auth";
-import { ApiErrorResponse } from "@/types/api";
+import { ApiError, ApiErrorResponse } from "@/types/api";
 
 type SignUpFormValues = {
     name: string;
@@ -64,8 +64,9 @@ export default function SignUpPage() {
             toast.success("Account created successfully");
             router.push("/sign-in");
         },
-        onError: (error) => {
-            toast.error(error.message);
+        onError: (res) => {
+            const message = res.response.data.error
+            toast.error(message);
         }
     });
 
@@ -76,7 +77,8 @@ export default function SignUpPage() {
                 router.push("/sign-in");
             },
             onError: (res) => {
-                toast.error(res.error);
+                const message = res.response.data.error
+                toast.error(message);
             }
         });
     };

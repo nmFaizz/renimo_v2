@@ -3,8 +3,16 @@ export type ApiResponse<T> = {
     data: T;
 };
 
-export type ApiErrorResponse = {
+export type ApiError = {
     status: boolean;
     message: string;
     error: string;
+}
+
+export type ApiErrorResponse = {
+    message: string;
+    response: {
+        data: ApiError;
+    };
+    status: number;
 }
