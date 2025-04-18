@@ -19,7 +19,8 @@ import { Form } from "@/components/ui/form";
 import { Button } from "@/components/ui/buttons/Button";
 import api from "@/lib/api";
 import { CheckUsernameResponse, SignUpResponse } from "@/types/auth";
-import { ApiError, ApiErrorResponse } from "@/types/api";
+import { ApiErrorResponse } from "@/types/api";
+import MainLayout from "@/components/layouts/MainLayout";
 
 type SignUpFormValues = {
     name: string;
@@ -86,7 +87,11 @@ export default function SignUpPage() {
     const isLoading = isCheckingUsername || isRegistering;
 
     return (
-        <main className="flex flex-col items-center justify-center min-h-screen py-2 px-4">
+        <MainLayout 
+            withNavbar={false}
+            withMargin={false}
+            className="flex flex-col items-center justify-center min-h-screen py-2 px-4"
+        >
             <Form {...methods}>
                 <form className="max-w-[520px] w-full" onSubmit={handleSubmit(handleSignUp)}>
                     <Card>
@@ -190,6 +195,6 @@ export default function SignUpPage() {
                     </Card>
                 </form>
             </Form>
-        </main>
+        </MainLayout>
     )
 }

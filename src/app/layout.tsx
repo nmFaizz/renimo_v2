@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import ReactQueryProvider from "@/providers/ReactQueryProvider";
 import { Toaster } from "@/components/ui/sonner";
+import Navbar from "@/components/layouts/Navbar";
 
 export const metadata: Metadata = {
   title: "Renimo",
@@ -19,9 +20,9 @@ export default function RootLayout({
       <body
         className={`antialiased`}
       >
-          <Toaster />
         <ReactQueryProvider>
           {children}
+          <Toaster />
         </ReactQueryProvider>
       </body>
     </html>

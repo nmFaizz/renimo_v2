@@ -10,7 +10,7 @@ import {
   FormField, 
   FormItem, 
   FormLabel,
-  FormMessage
+  FormMessage,
 } from "@/components/ui/form"
 
 type InputProps = {
@@ -57,11 +57,6 @@ function Input({
             <FormDescription>
               {helperText}
             </FormDescription>
-          )}
-          {helperText && (
-            <FormMessage>
-              {helperText}
-            </FormMessage>
           )}
           <FormMessage />
         </FormItem>

@@ -22,7 +22,8 @@ import { setToken } from "@/lib/cookie";
 import { SignInResponse } from "@/types/auth";
 import { useUserStore } from "@/stores/useUserStore";
 import { UserResponse } from "@/types/user";
-import { ApiErrorResponse } from "@/types/api";;
+import { ApiErrorResponse } from "@/types/api";import MainLayout from "@/components/layouts/MainLayout";
+;
 
 type SignInFormValues = {
     username: string;
@@ -67,7 +68,7 @@ export default function SignInPage() {
             setToken("renimo_token", token);
             setUserData();
             toast.success("Login successful")
-            router.push("/");
+            router.push("/home");
         },
         onError: (res) => {
             const message = res.response.data.error
@@ -80,7 +81,11 @@ export default function SignInPage() {
     }
     
     return (
-        <div className="flex flex-col items-center justify-center min-h-screen py-2 px-4">
+        <MainLayout 
+            withMargin={false}
+            withNavbar={false}
+            className="flex flex-col items-center justify-center min-h-screen py-2 px-4"
+        >
             <Form {...methods}>
                 <form onSubmit={handleSubmit(handleSignIn)} className="max-w-[520px] w-full">
                     <Card>
@@ -165,6 +170,6 @@ export default function SignInPage() {
                     </Card>
                 </form>
             </Form>
-        </div>
+        </MainLayout>
     )
 }
