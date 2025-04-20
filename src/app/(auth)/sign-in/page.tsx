@@ -165,7 +165,7 @@ export default function SignInPage() {
                                 </Button>
 
                                 <div className="flex items-center gap-2 mt-4">
-                                    <p>Don't have an account? </p>
+                                    <p>Don&apos;t have an account? </p>
                                     <ButtonLink 
                                         href="/sign-up" 
                                         variant="link"
