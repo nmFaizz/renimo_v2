@@ -1,3 +1,4 @@
+"use client"
 import Link from "next/link"
 import { useMutation, useQuery } from "@tanstack/react-query"
 import { useQueryClient } from "@tanstack/react-query"
