@@ -28,13 +28,13 @@ export default function SearchPageContainer({
     return (
         <MainLayout withMargin withNavbar>
             <div>
-                <h1 className="text-2xl font-bold mb-4">Search results for "{search}"</h1>
+                <h1 className="text-2xl font-bold mb-4">Search results for &quot;{search}&quot;</h1>
                 {isLoading && (
                     <Skeleton className="w-full h-10 mb-4" />
                 )}
 
                 {searchResults?.data?.length === 0 && (
-                    <p className="text-center">No results found for "{search}"</p>
+                    <p className="text-center">No results found for &quot;{search}&quot;</p>
                 )}
 
                 {searchResults?.data?.map((post) => (
