@@ -119,7 +119,16 @@ export default function SignInPage() {
                                             pattern: {
                                                 value: /^[a-zA-Z0-9._-]+$/,
                                                 message: "Username can only contain letters, numbers, dots, underscores, and hyphens"
-                                            }
+                                            },
+                                            minLength: {
+                                                value: 3,
+                                                message: "Username must be at least 3 characters long"
+                                            },
+                                            maxLength: {
+                                                value: 20,
+                                                message: "Username must be at most 20 characters long"
+                                            },
+                                            
                                         }}
                                     />
                                 </div>

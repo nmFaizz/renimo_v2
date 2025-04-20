@@ -2,17 +2,8 @@
 import Link from "next/link"
 import Image from "next/image"
 
-import { 
-    Bell, 
-    Home, 
-    MessagesSquare, 
-    Settings, 
-    User, 
-    Plus 
-} from "lucide-react"
-import { Avatar, AvatarImage } from "@/components/ui/avatar"
-import { Button } from "@/components/ui/buttons/Button"
 import { useUserStore } from "@/stores/useUserStore"
+import UserAvatar from "@/components/UserAvatar";
 
 export default function Navbar() {
     const { user } = useUserStore()
@@ -21,22 +12,7 @@ export default function Navbar() {
 
     return (
         <header className="sticky top-0 bg-popover py-5 z-50">
-            <div className="flex justify-between items-center centered-container-xl">
-                <div className="flex items-center gap-4">
-                    <Link href={`/profile/${username}`} className="flex items-center gap-4">
-                        <Avatar>
-                            <AvatarImage 
-                                src={"https://github.com/shadcn.png"}
-                            />
-                        </Avatar>
-                        <p>{user?.username}</p>
-                    </Link>
-                    <Button>
-                        <Plus />
-                        Create Post
-                    </Button>
-                </div>
-
+            <div className="flex items-center gap-5 centered-container-xl">
                 <Link href="/home">
                     <figure>
                         <Image 
@@ -47,6 +23,16 @@ export default function Navbar() {
                         />
                     </figure>
                 </Link>
+
+                <div className="flex items-center gap-4">
+                    <Link href={`/profile/${username}`} className="flex items-center gap-4">
+                        <UserAvatar 
+                            image_url={user?.image_url}
+                            username={user?.username!}
+                        />
+                        <p>{user?.username}</p>
+                    </Link>
+                </div>
             </div>
         </header>
     )

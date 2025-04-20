@@ -140,6 +140,10 @@ export default function SignUpPage() {
                                         placeholder="Enter username"
                                         validation={{
                                             required: "Username is required",
+                                            pattern: {
+                                                value: /^[a-zA-Z0-9._-]+$/,
+                                                message: "Username can only contain letters, numbers, dots, underscores, and hyphens"
+                                            },
                                             minLength: {
                                                 value: 3,
                                                 message: "Username must be at least 3 characters long"
