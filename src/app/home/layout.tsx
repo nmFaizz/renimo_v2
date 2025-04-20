@@ -1,8 +1,8 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Renimo - Home",
-    description: "Social media space for everyone",
+    title: "Home",
+    description: "Home",
 }
 
 export default function HomeLayout({

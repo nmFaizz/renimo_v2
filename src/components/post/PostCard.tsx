@@ -145,7 +145,7 @@ export default function PostCard({
                 <CardHeader>
                     <Link 
                         href={`/profile/${user.username}`}
-                        className="flex items-center gap-3 w-max"
+                        className="flex items-center gap-3 max-w-max"
                     >
                         <UserAvatar 
                             image_url={user.image_url}
@@ -207,7 +207,7 @@ export default function PostCard({
                 </CardContent>
 
                 <CardFooter>
-                    <div className="flex gap-2">
+                    <div className="flex gap-2 flex-wrap">
                         <Button 
                             variant="outline"
                             onClick={() => likePost(id)}

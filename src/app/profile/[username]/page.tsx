@@ -1,4 +1,10 @@
 import UserProfileContainer from "@/app/profile/[username]/containers/UserProfileContainer";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "User Profile",
+    description: "User Profile",
+}
 
 export default async function UserProfilePage({ 
     params,

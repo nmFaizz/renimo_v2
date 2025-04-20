@@ -37,7 +37,7 @@ function UserProfileContainer({
     })
 
     const { data: posts, isLoading: postsLoading } = useQuery<PostResponse>({
-        queryKey: ["posts"],
+        queryKey: ["posts", username],
         queryFn: async () => {
             const res = await api.get(`/api/user/${username}/posts?per_page=100`)
             return res.data
@@ -140,7 +140,7 @@ function UserLikedPostsContainer({
     const { user } = useUserStore()
 
     const { data: posts, isLoading } = useQuery<PostResponse>({
-        queryKey: ["posts"],
+        queryKey: ["posts", username],
         queryFn: async () => {
             const res = await api.get(`/api/user/${username}/posts?per_page=100&is_liked=true`)
             return res.data
@@ -172,6 +172,10 @@ function UserLikedPostsContainer({
                     />
                 )
             ))}
+
+            {posts?.data?.length === 0 && (
+                <p className="text-center text-gray-500">No liked posts found.</p>
+            )}
         </div>
     )
 }
