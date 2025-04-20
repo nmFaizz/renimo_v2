@@ -34,7 +34,7 @@ export default function FileUpload({
             control={control}
             name={id}
             rules={validation}
-            render={({ field: { value, onChange, ...fieldProps } }) => {
+            render={({ field: { onChange, ...fieldProps } }) => {
                 const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
                     const files = e.target.files;
                     const file = files && files.length > 0 ? files[0] : null;

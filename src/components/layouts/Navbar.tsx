@@ -28,7 +28,7 @@ export default function Navbar() {
                     <Link href={`/profile/${username}`} className="flex items-center gap-4">
                         <UserAvatar 
                             image_url={user?.image_url}
-                            username={user?.username!}
+                            username={user?.username || "Guest"}
                         />
                         <p>{user?.username}</p>
                     </Link>
