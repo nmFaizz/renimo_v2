@@ -1,15 +1,15 @@
 # Renimo v2
 
-Renimo v2 is a web application built with [Next.js](https://nextjs.org), bootstrapped using [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).  
-This project aims to provide a modern, fast, and scalable platform for [briefly describe your project's purpose].
+Renimo v2 is a modern social thread app inspired by platforms like X/Twitter. Built with [Next.js](https://nextjs.org), Renimo lets users share updates, engage in threaded conversations, and follow topics in real time.
 
 ## Features
 
-- ⚡ Built with Next.js 14+
-- 🎨 Uses [Geist font](https://vercel.com/font) via `next/font`
-- 🚀 Ready to deploy on [Vercel](https://vercel.com/)
-- 🛠️ Hot-reloading for instant development feedback
-- [Add more project-specific features here]
+- 📝 Post threads and replies
+- 💬 Real-time conversations
+- 🔍 Search threads and users
+- 🎨 Optimized fonts with [Geist](https://vercel.com/font)
+- 🚀 Instant hot-reloading for development
+- 💡 Built with Next.js 14+ for performance and scalability
 
 ## Getting Started
 
@@ -27,13 +27,13 @@ bun dev
 
 Then open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the home page by modifying `app/page.tsx`. The page will auto-update as you edit the file.
+You can start editing the main page by modifying `app/page.tsx`. Changes are reflected instantly.
 
 ## Project Structure
 
 ```
-app/          # Main application pages and routes
-public/       # Static files
+app/          # Application pages and routes
+public/       # Static files (images, favicon, etc.)
 styles/       # Global styles
 README.md     # Project documentation
 ...
@@ -47,8 +47,9 @@ README.md     # Project documentation
 
 ## Deployment
 
-Deploy your Next.js app easily with [Vercel](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme).  
-For detailed deployment instructions, see [Next.js deployment docs](https://nextjs.org/docs/app/building-your-application/deploying).
+Deploy your Next.js app easily with [Vercel](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme).
+
+See [deployment docs](https://nextjs.org/docs/app/building-your-application/deploying) for more information.
 
 ## Contributing
 
@@ -56,8 +57,7 @@ Pull requests and feedback are welcome! For major changes, please open an issue 
 
 ## License
 
-[MIT](LICENSE)  
-[Add a link to your license if you have one]
+[MIT](LICENSE)
 
 ---
 
